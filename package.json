@@ -2,7 +2,7 @@
   "name": "my-internships",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-github-username.github.io/your-repo-name",
+  "homepage": "https://github.com/3stherA/my-internships",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -41,6 +41,3 @@
     ]
   }
 }
-
-
-//https://github.com/3stherA/my-internships
