@@ -287,6 +287,7 @@ const NewspaperPage = () => {
         <h1 style={styles.title}>One More Term</h1>
         <div style={styles.subtitleWrapper}>
           <p style={styles.subtitle}>An Amazing Fall Semester at Cube Packaging</p>
+          <p style={styles.subtitle}>Esther Adeosun</p>
         </div>
       </header>
 
