@@ -170,14 +170,19 @@ const styles = {
   },
   phoneWrap: {
     flex: '0 0 220px',
+    maxWidth: '220px',
+    width: '100%',
   },
   phone: {
-    width: '220px',
-    height: '500px',
+    width: '100%',
+    maxWidth: '220px',
+    aspectRatio: '220 / 500',
     background: '#F5F9FD',
     borderRadius: '28px',
     border: '3px solid #195FA5',
     padding: '8px',
+    boxSizing: 'border-box',
+    margin: '0 auto',
   },
   phoneScreen: {
     width: '100%',
@@ -374,7 +379,11 @@ const ImageStub = ({ src, alt, filename, height = '220px', width = '100%' }) => 
         />
       ) : (
         <div style={{ ...styles.imageStub, width: '100%', height: '100%' }}>
-          <i className="ti ti-photo" style={{ fontSize: '22px' }} aria-hidden="true" />
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <circle cx="8.5" cy="9.5" r="1.5" />
+            <path d="M21 15l-5-5-9 9" />
+          </svg>
           <span>{filename}</span>
         </div>
       )}
@@ -385,7 +394,7 @@ const ImageStub = ({ src, alt, filename, height = '220px', width = '100%' }) => 
 const Phone = ({ label, image, filename }) => {
   const openModal = React.useContext(ImageModalContext);
   return (
-    <div style={styles.phoneWrap}>
+    <div className="phone-wrap" style={styles.phoneWrap}>
       <div style={styles.phone}>
         {image ? (
           <img
@@ -396,7 +405,11 @@ const Phone = ({ label, image, filename }) => {
           />
         ) : (
           <div style={{ ...styles.imageStub, width: '100%', height: '100%', borderRadius: '20px' }}>
-            <i className="ti ti-photo" style={{ fontSize: '22px' }} aria-hidden="true" />
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+              <circle cx="8.5" cy="9.5" r="1.5" />
+              <path d="M21 15l-5-5-9 9" />
+            </svg>
             <span>{filename || label}</span>
           </div>
         )}
@@ -476,16 +489,48 @@ const MeacReport = () => {
   return (
     <ImageModalContext.Provider value={openModal}>
     <div style={styles.page}>
+      <style>
+        {`
+          @media (max-width: 700px) {
+            .section-row {
+              flex-direction: column !important;
+              gap: 24px !important;
+              align-items: stretch !important;
+            }
+            .goal1-row {
+              flex-direction: column !important;
+            }
+            .goal1-images {
+              justify-content: center !important;
+            }
+            .phone-wrap {
+              flex-basis: auto !important;
+              max-width: 240px !important;
+              margin: 0 auto !important;
+            }
+            .hero-top {
+              flex-wrap: wrap;
+              row-gap: 12px;
+            }
+            main {
+              padding: 0 18px !important;
+            }
+          }
+        `}
+      </style>
       <header style={styles.hero}>
-        <div style={styles.heroTop}>
+        <div className="hero-top" style={styles.heroTop}>
           <div style={styles.appIcon}>
             {appIconImg ? (
               <img src={appIconImg} alt="MeacTimekeep app icon" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }} />
             ) : (
-              <i className="ti ti-clock" style={{ fontSize: '30px', color: '#ffffff' }} aria-hidden="true" />
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#195FA5" strokeWidth="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
             )}
           </div>
-          <div>
+          <div style={{ flex: '1 1 auto', minWidth: 0 }}>
             <p style={styles.heroName}>MEAC: Returning Web Application Developer</p>
             <p style={styles.heroSub}>Esther Adeosun, June to August 2026</p>
           </div>
@@ -514,7 +559,7 @@ const MeacReport = () => {
       <main style={styles.main}>
         {/* Introduction */}
         <section ref={refs.introduction} style={styles.section}>
-          <div style={styles.sectionRow}>
+          <div className="section-row" style={styles.sectionRow}>
             <div style={styles.sectionText}>
               <p style={styles.sectionLabel}><span style={styles.sectionNumberBadge}>01</span>introduction</p>
               <h2 style={styles.sectionHeading}>Coming back for a second term</h2>
@@ -556,7 +601,7 @@ const MeacReport = () => {
 
         {/* MEAC / Employer */}
         <section ref={refs.meac} style={styles.section}>
-          <div style={{ ...styles.sectionRow, ...styles.sectionRowReverse }}>
+          <div className="section-row" style={{ ...styles.sectionRow, ...styles.sectionRowReverse }}>
             <div style={styles.sectionText}>
               <p style={styles.sectionLabel}><span style={styles.sectionNumberBadge}>02</span>the employer</p>
               <h2 style={styles.sectionHeading}>Meadowvale East Apostolic Church</h2>
@@ -585,11 +630,12 @@ const MeacReport = () => {
           </div>
         </section>
 
+        {/* The Apps I Came Back To */}
         <section ref={refs.work} style={styles.section}>
           <p style={styles.sectionLabel}><span style={styles.sectionNumberBadge}>03</span>the apps</p>
           <h2 style={styles.sectionHeading}>The Apps I Came Back To</h2>
 
-          <div style={{ ...styles.sectionRow, marginTop: '32px' }}>
+          <div className="section-row" style={{ ...styles.sectionRow, marginTop: '32px' }}>
             <div style={styles.sectionText}>
               <p style={styles.sectionParagraph}>
                 This term revolved around two apps, <span style={styles.appNameAccent}>MeacTimekeep</span> and <span style={styles.appNameAccent}>MeacFoodBank</span>, both ones I'd built the year before and both due for
@@ -619,7 +665,7 @@ const MeacReport = () => {
           <p style={styles.sectionLabel}><span style={styles.sectionNumberBadge}>04</span>the job this time around</p>
           <h2 style={styles.sectionHeading}>What the job actually asked for</h2>
 
-          <div style={{ ...styles.sectionRow, marginTop: '32px' }}>
+          <div className="section-row" style={{ ...styles.sectionRow, marginTop: '32px' }}>
             <div style={styles.sectionText}>
               <p style={styles.sectionParagraph}>
                 Most of this term didn't look like feature work at all. It
@@ -736,10 +782,10 @@ const MeacReport = () => {
               </>
             }
           >
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+            <div className="goal1-row" style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1 }}>
-                I was very intentional about achieving this goal, so much so that
-                I made the decision to change the UI of the app
+                I was very intentional about achieving this goal, so much so
+                that I made the decision to change the UI of the app
                 significantly. Having a UX/UI course under my belt, I
                 noticed places where I'd fallen short in my previous design,
                 and I prioritized fixing those. The most noticeable change
@@ -757,7 +803,7 @@ const MeacReport = () => {
                 app, staff gave feedback that they knew exactly where to go
                 and that it was easy to navigate.
                 </div>
-                <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+                <div className="goal1-images" style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
                 <div style={{ width: '90px' }}>
                     <ImageStub filename="ui-before.png" alt="UI before redesign" src={uiBeforeImg} height="180px" width="90px" />
                     <p style={{ ...styles.phoneScreenLabel, color: '#8a8a8a', marginTop: '6px', textAlign: 'center' }}>before</p>
