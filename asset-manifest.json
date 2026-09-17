@@ -1,19 +1,29 @@
 {
   "files": {
     "main.css": "/my-internships/static/css/main.e6c13ad2.css",
-    "main.js": "/my-internships/static/js/main.6590d570.js",
+    "main.js": "/my-internships/static/js/main.25bb03dd.js",
     "static/js/453.7e399b74.chunk.js": "/my-internships/static/js/453.7e399b74.chunk.js",
     "static/media/cube-1.png": "/my-internships/static/media/cube-1.cfb3ce0e62f5ba7feb68.png",
     "static/media/cube-4.png": "/my-internships/static/media/cube-4.ae0c8b5f0e712ce1987d.png",
+    "static/media/meac-building.png": "/my-internships/static/media/meac-building.ae521305c85ece9f2560.png",
+    "static/media/workplace.jpg": "/my-internships/static/media/workplace.6af7c9b564fe17e78f2a.jpg",
+    "static/media/ui-after.PNG": "/my-internships/static/media/ui-after.e54c67b71e5eb07a0a6c.PNG",
+    "static/media/timekeep-screenshot.PNG": "/my-internships/static/media/timekeep-screenshot.0e0f5be77d5e0e4a670a.PNG",
+    "static/media/foodbank-screenshot.PNG": "/my-internships/static/media/foodbank-screenshot.9e866534f45b1e540e5f.PNG",
+    "static/media/team-or-workspace-photo.PNG": "/my-internships/static/media/team-or-workspace-photo.c4490c1064e19a1a9074.PNG",
+    "static/media/term-overview-screenshot.PNG": "/my-internships/static/media/term-overview-screenshot.faef14a16b52df1329d9.PNG",
+    "static/media/ui-before.png": "/my-internships/static/media/ui-before.2fee108bdcbf41035b65.png",
+    "static/media/meac-logo.png": "/my-internships/static/media/meac-logo.0c6054f470806bbb4b1b.png",
     "static/media/cube-3.jpg": "/my-internships/static/media/cube-3.25a2ec92400a8013363e.jpg",
+    "static/media/monday-screenshot.png": "/my-internships/static/media/monday-screenshot.11a20026ae168e4fe467.png",
     "static/media/cube-5.png": "/my-internships/static/media/cube-5.f5d34e8e8f31b623e39b.png",
     "index.html": "/my-internships/index.html",
     "main.e6c13ad2.css.map": "/my-internships/static/css/main.e6c13ad2.css.map",
-    "main.6590d570.js.map": "/my-internships/static/js/main.6590d570.js.map",
+    "main.25bb03dd.js.map": "/my-internships/static/js/main.25bb03dd.js.map",
     "453.7e399b74.chunk.js.map": "/my-internships/static/js/453.7e399b74.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6590d570.js"
+    "static/js/main.25bb03dd.js"
   ]
 }
