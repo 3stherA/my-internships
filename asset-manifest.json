@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-internships/static/css/main.e6c13ad2.css",
-    "main.js": "/my-internships/static/js/main.25bb03dd.js",
+    "main.js": "/my-internships/static/js/main.abe8da2e.js",
     "static/js/453.7e399b74.chunk.js": "/my-internships/static/js/453.7e399b74.chunk.js",
     "static/media/cube-1.png": "/my-internships/static/media/cube-1.cfb3ce0e62f5ba7feb68.png",
     "static/media/cube-4.png": "/my-internships/static/media/cube-4.ae0c8b5f0e712ce1987d.png",
@@ -19,11 +19,11 @@
     "static/media/cube-5.png": "/my-internships/static/media/cube-5.f5d34e8e8f31b623e39b.png",
     "index.html": "/my-internships/index.html",
     "main.e6c13ad2.css.map": "/my-internships/static/css/main.e6c13ad2.css.map",
-    "main.25bb03dd.js.map": "/my-internships/static/js/main.25bb03dd.js.map",
+    "main.abe8da2e.js.map": "/my-internships/static/js/main.abe8da2e.js.map",
     "453.7e399b74.chunk.js.map": "/my-internships/static/js/453.7e399b74.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.25bb03dd.js"
+    "static/js/main.abe8da2e.js"
   ]
 }
